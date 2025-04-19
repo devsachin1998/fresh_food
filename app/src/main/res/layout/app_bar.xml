@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/toolbar_bg_color"
+        app:contentInsetStartWithNavigation="0dp"
+        app:theme="@style/ToolBarStyle"
+        app:title="@string/app_name">
+
+    </androidx.appcompat.widget.Toolbar>
+</layout>

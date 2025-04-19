@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.NotificationActivity">
+
+        <include
+            android:id="@+id/toolbarLayout"
+            layout="@layout/dashboard_app_bar" />
+
+        <include
+            android:id="@+id/emptyLayout"
+            layout="@layout/layout_empty"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvOrders"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:overScrollMode="never"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbarLayout"
+            tools:listitem="@layout/item_notification" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

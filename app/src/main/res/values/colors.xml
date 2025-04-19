@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<!--    <color name="colorPrimary">#EE6B4D</color>-->
+<!--    <color name="colorPrimaryDark">#EE6B4D</color>-->
+        <color name="colorPrimary">#008000</color>
+        <color name="colorPrimaryDark">#008000</color>
+
+    <color name="colorAccent">#5D5D5D</color>
+    <color name="text_color">#000000</color>
+    <color name="hint_text_color">#293241</color>
+
+    <color name="off_white">#F6F6F6</color>
+<!--    <color name="app_color">#EE6B4D</color>-->
+    <color name="app_color">#008000</color>
+    <color name="black">#000000</color>
+    <color name="iconcolor">#aaaaaa</color>
+    <color name="half_black">#999999</color>
+    <color name="window_background">#E0EDF4</color>
+    <color name="homecard_summary">#f0f0f0</color>
+
+    <color name="white">#ffffff</color>
+    <color name="window_bg">#FFFFFF</color>
+    <color name="image_bg">#ededed</color>
+
+    <color name="divider_color">#d3d3d3</color>
+    <color name="dialog_divider_color">#d3d3d3</color>
+
+    <color name="toolbar_bg_color">#008000</color>
+    <color name="common_icon_color">#ffffff</color>
+    <color name="bottom_sheet_common_color">#f1f1f1</color>
+
+    <color name="red">#FF0000</color>
+    <color name="green">#008000</color>
+
+    <color name="trans_red">#66FF0000</color>
+    <color name="trans_green">#66008000</color>
+</resources>

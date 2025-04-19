@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:id="@+id/childView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dimen_4dp"
+        android:background="@drawable/drawable_category_deselected"
+        android:orientation="vertical"
+        android:padding="@dimen/dimen_4dp">
+
+        <TextView
+            android:id="@+id/txtItemName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="marquee"
+            android:focusable="true"
+            android:text=""
+            android:paddingStart="@dimen/dimen_10dp"
+            android:paddingEnd="@dimen/dimen_10dp"
+            android:focusableInTouchMode="true"
+            android:fontFamily="@font/nunito_regular"
+            android:textSize="@dimen/sp16"
+            android:freezesText="true"
+            android:textColor="@color/black"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:scrollHorizontally="true"
+            android:singleLine="true" />
+
+    </LinearLayout>
+
+</layout>

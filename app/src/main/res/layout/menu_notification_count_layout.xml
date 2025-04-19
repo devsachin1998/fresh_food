@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="36dp"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="10dp"
+    android:layout_marginRight="10dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:gravity="end|top"
+    android:orientation="vertical"
+    android:paddingEnd="5dp"
+    android:paddingLeft="8dp"
+    android:paddingRight="5dp"
+    android:paddingStart="8dp">
+
+    <ImageView
+        android:id="@+id/hotlist_bell"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
+        android:contentDescription="Notification"
+        android:gravity="center"
+        android:src="@drawable/bell_outline" />
+
+    <TextView
+        android:id="@+id/txtNotificationCount"
+        android:layout_width="13dp"
+        android:layout_height="13dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="3dp"
+        android:background="@drawable/xml_budget"
+        android:padding="1dp"
+        android:gravity="center"
+        android:text="2"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp8"
+        />
+</RelativeLayout>

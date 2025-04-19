@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <group
+        android:id="@+id/grp1"
+        android:checkableBehavior="single"
+        android:menuCategory="alternative">
+
+    <item
+        android:id="@+id/nav_order"
+        app:showAsAction="never"
+        android:icon="@drawable/order"
+
+        android:title="My Orders" />
+    <item
+        android:id="@+id/nav_transaction"
+        app:showAsAction="never"
+        android:icon="@drawable/transaction_history_icon"
+        android:title="My Transaction" />
+    <item
+        android:id="@+id/action_profile"
+
+        android:icon="@drawable/myprofile"
+        android:title="My Profile"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/nav_payment"
+        app:showAsAction="never"
+        android:icon="@drawable/rupee_indian1"
+        android:title="My Payment" />
+    <item
+        android:id="@+id/nav_share"
+        app:showAsAction="never"
+        android:icon="@drawable/share1"
+        android:title="Share" />
+    <item
+        android:id="@+id/nav_password"
+        app:showAsAction="never"
+        android:icon="@drawable/password"
+        android:title="Change Password" />
+
+    <item
+        android:id="@+id/nav_logout"
+        app:showAsAction="never"
+        android:icon="@drawable/logout"
+        android:title="Logout" />
+    </group>
+</menu>

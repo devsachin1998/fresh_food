@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.WalletActivity">
+
+        <include
+            android:id="@+id/toolbarLayout"
+            layout="@layout/wallet_app_bar" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvPaymentHistory"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:overScrollMode="never"
+
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbarLayout"
+            tools:itemCount="3"
+            tools:listitem="@layout/item_wallet" />
+
+        <include
+            android:id="@+id/emptyLayout"
+            layout="@layout/layout_empty" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabAdd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_add"
+            app:backgroundTint="@color/app_color"
+            app:useCompatPadding="true"
+            android:textAllCaps="false"
+            android:layout_margin="@dimen/dimen_16dp"
+            app:fabSize="normal"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:tint="@color/white" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

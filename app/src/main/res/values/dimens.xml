@@ -1,0 +1,133 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <dimen name="toolbar_height">56dp</dimen>
+    <dimen name="toolbar_textsize">20sp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="text_margin">16dp</dimen>
+    <dimen name="EMPTY_TEXT_SIZE">22sp</dimen>
+
+    <dimen name="letter_icon_size">36dp</dimen>
+
+    <dimen name="textButton">16dp</dimen>
+    <dimen name="edittext_height">46dp</dimen>
+
+    <dimen name="BUTTON_HEIGHT">42dp</dimen>
+    <dimen name="corner_radius">4dp</dimen>
+
+    <dimen name="VVS_TEXT">8sp</dimen>
+    <dimen name="VS_TEXT">10sp</dimen>
+    <dimen name="S_TEXT">12sp</dimen>
+    <dimen name="N_TEXT">14sp</dimen>
+    <dimen name="M_TEXT">16sp</dimen>
+    <dimen name="L_TEXT">18sp</dimen>
+    <dimen name="XL_TEXT">20sp</dimen>
+    <dimen name="XXL_TEXT">22sp</dimen>
+    <dimen name="SPLASH_TEXT">26sp</dimen>
+    <dimen name="BIG_HOME_TEXT">32sp</dimen>
+
+    <dimen name="sp8">8sp</dimen>
+    <dimen name="sp10">10sp</dimen>
+    <dimen name="sp12">12sp</dimen>
+    <dimen name="sp14">14sp</dimen>
+    <dimen name="sp15">15sp</dimen>
+    <dimen name="sp16">16sp</dimen>
+    <dimen name="sp18">18sp</dimen>
+    <dimen name="sp20">20sp</dimen>
+    <dimen name="sp22">22sp</dimen>
+    <dimen name="sp24">24sp</dimen>
+    <dimen name="sp26">26sp</dimen>
+    <dimen name="sp28">28sp</dimen>
+    <dimen name="sp30">30sp</dimen>
+    <dimen name="sp32">32sp</dimen>
+    <dimen name="sp34">34sp</dimen>
+    <dimen name="sp36">36sp</dimen>
+    <dimen name="sp38">38sp</dimen>
+    <dimen name="sp40">40sp</dimen>
+    <dimen name="sp42">42sp</dimen>
+    <dimen name="sp44">44sp</dimen>
+    <dimen name="sp46">46sp</dimen>
+    <dimen name="sp48">48sp</dimen>
+    <dimen name="sp50">50sp</dimen>
+    <dimen name="sp52">52sp</dimen>
+    <dimen name="sp54">54sp</dimen>
+    <dimen name="sp56">56sp</dimen>
+    <dimen name="sp58">58sp</dimen>
+    <dimen name="sp60">60sp</dimen>
+    <dimen name="sp62">62sp</dimen>
+    <dimen name="sp64">64sp</dimen>
+    <dimen name="sp72">72sp</dimen>
+    <dimen name="sp84">84sp</dimen>
+    <dimen name="sp96">96sp</dimen>
+
+
+    <dimen name="dimen_1dp">1dp</dimen>
+    <dimen name="dimen_2dp">2dp</dimen>
+    <dimen name="dimen_3dp">3dp</dimen>
+    <dimen name="dimen_4dp">4dp</dimen>
+    <dimen name="dimen_6dp">6dp</dimen>
+    <dimen name="dimen_8dp">8dp</dimen>
+    <dimen name="dimen_10dp">10dp</dimen>
+    <dimen name="dimen_12dp">12dp</dimen>
+    <dimen name="dimen_14dp">14dp</dimen>
+    <dimen name="dimen_16dp">16dp</dimen>
+    <dimen name="dimen_18dp">18dp</dimen>
+    <dimen name="dimen_20dp">20dp</dimen>
+    <dimen name="dimen_22dp">22dp</dimen>
+    <dimen name="dimen_24dp">24dp</dimen>
+    <dimen name="dimen_26dp">26dp</dimen>
+    <dimen name="dimen_28dp">28dp</dimen>
+    <dimen name="dimen_30dp">30dp</dimen>
+    <dimen name="dimen_32dp">32dp</dimen>
+    <dimen name="dimen_34dp">34dp</dimen>
+    <dimen name="dimen_36dp">36dp</dimen>
+    <dimen name="dimen_38dp">38dp</dimen>
+    <dimen name="dimen_40dp">40dp</dimen>
+    <dimen name="dimen_42dp">42dp</dimen>
+    <dimen name="dimen_44dp">44dp</dimen>
+    <dimen name="dimen_46dp">46dp</dimen>
+    <dimen name="dimen_48dp">48dp</dimen>
+    <dimen name="dimen_50dp">50dp</dimen>
+    <dimen name="dimen_52dp">52dp</dimen>
+    <dimen name="dimen_54dp">54dp</dimen>
+    <dimen name="dimen_56dp">56dp</dimen>
+    <dimen name="dimen_58dp">58dp</dimen>
+    <dimen name="dimen_60dp">60dp</dimen>
+    <dimen name="dimen_62dp">62dp</dimen>
+    <dimen name="dimen_64dp">64dp</dimen>
+    <dimen name="dimen_68dp">68dp</dimen>
+    <dimen name="dimen_72dp">72dp</dimen>
+    <dimen name="dimen_76dp">76dp</dimen>
+    <dimen name="dimen_88dp">88dp</dimen>
+    <dimen name="dimen_92dp">92dp</dimen>
+    <dimen name="dimen_96dp">96dp</dimen>
+    <dimen name="dimen_112dp">112dp</dimen>
+    <dimen name="dimen_116dp">116dp</dimen>
+    <dimen name="dimen_120dp">120dp</dimen>
+    <dimen name="dimen_128dp">128dp</dimen>
+    <dimen name="dimen_136dp">136dp</dimen>
+    <dimen name="dimen_156dp">156dp</dimen>
+    <dimen name="dimen_172dp">172dp</dimen>
+    <dimen name="dimen_196dp">196dp</dimen>
+    <dimen name="dimen_212dp">212dp</dimen>
+    <dimen name="dimen_236dp">236dp</dimen>
+    <dimen name="dimen_250dp">250dp</dimen>
+    <dimen name="dimen_256dp">256dp</dimen>
+    <dimen name="dimen_272dp">272dp</dimen>
+    <dimen name="dimen_296dp">296dp</dimen>
+    <dimen name="dimen_312dp">312dp</dimen>
+    <dimen name="dimen_328dp">328dp</dimen>
+    <dimen name="dimen_512dp">512dp</dimen>
+
+    <dimen name="dimen_plan_height">72dp</dimen>
+    <dimen name="dimen_plan_width">96dp</dimen>
+
+    <!--
+Refer to App Widget Documentation for margin information
+http://developer.android.com/guide/topics/appwidgets/index.html#CreatingLayout
+    -->
+    <dimen name="widget_margin">0dp</dimen>
+
+</resources>

@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+
+    <data>
+
+    </data>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            tools:context=".ui.DashboardActivity">
+
+            <include
+                android:id="@+id/toolbarLayout"
+                layout="@layout/dashboard_app_bar" />
+            <!--        <com.google.android.material.textfield.TextInputLayout-->
+            <!--            android:id="@+id/searchInputLayout"-->
+            <!--            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
+            <!--            android:layout_width="match_parent"-->
+            <!--            android:layout_height="60sp"-->
+            <!--            android:textSize="@dimen/sp15"-->
+            <!--            android:layout_margin="@dimen/dimen_16dp"-->
+            <!--            app:boxBackgroundMode="outline"-->
+            <!--            app:layout_constraintTop_toBottomOf="@id/toolbarLayout"-->
+            <!--            >-->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/llsearch"
+                android:layout_width="match_parent"
+                app:layout_constraintTop_toBottomOf="@id/toolbarLayout"
+
+                android:layout_height="60dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+
+                    android:layout_marginRight="5dp">
+
+<!--                    &lt;!&ndash;   <ImageView-->
+<!--                           android:id="@+id/searchbck"-->
+<!--                           android:layout_width="25dp"-->
+<!--                           android:layout_height="30dp"-->
+<!--                           android:padding="3dp"-->
+<!--                           android:layout_marginRight="20dp"-->
+<!--                           android:layout_marginLeft="15dp"-->
+<!--                           android:layout_alignParentLeft="true"-->
+<!--                           android:layout_centerInParent="true"-->
+<!--                           android:layout_centerVertical="true"-->
+<!--                           android:src="@drawable/left_arrow__1_" />&ndash;&gt;-->
+
+                    <EditText
+                        android:id="@+id/edtSearch"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerInParent="true"
+                        android:background="@null"
+                        android:drawableLeft="@drawable/searchicon"
+                        android:gravity="left|center"
+                        android:hint="Search item .."
+                        android:imeOptions="actionSearch"
+                        android:inputType="text"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="30dp"
+                        android:textSize="18dp" />
+
+                    <ImageView
+                        android:id="@+id/searchcancle"
+                        android:layout_width="30dp"
+                        android:layout_height="25dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="3dp"
+                        android:layout_marginRight="3dp"
+                        android:padding="5dp"
+                        android:src="@drawable/cancle" />
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <!--            <com.google.android.material.textfield.TextInputEditText-->
+            <!--                android:id="@+id/edtSearch"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="match_parent"-->
+            <!--                android:hint="Search"-->
+            <!--                android:textSize="@dimen/sp20"-->
+            <!--                android:drawableLeft="@drawable/searchicon"-->
+            <!--                android:inputType="text"-->
+            <!--                />-->
+
+            <!--        </com.google.android.material.textfield.TextInputLayout>-->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvCategories"
+                android:layout_width="match_parent"
+                android:visibility="gone"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dimen_8dp"
+                android:orientation="horizontal"
+                android:padding="@dimen/dimen_4dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+
+                app:layout_constraintTop_toBottomOf="@+id/llsearch"
+                tools:listitem="@layout/item_category" />
+
+
+            <include
+                android:id="@+id/emptyLayout"
+                layout="@layout/layout_empty"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="0dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvItems"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/dimen_8dp"
+
+                android:overScrollMode="never"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rvCategories"
+                tools:listitem="@layout/item_food">
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+            <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                android:id="@+id/fabProceed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dimen_24dp"
+                android:paddingStart="@dimen/dimen_20dp"
+                android:paddingEnd="@dimen/dimen_20dp"
+                android:visibility="gone"
+                android:text="Proceed to cart"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                app:backgroundTint="@color/app_color"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

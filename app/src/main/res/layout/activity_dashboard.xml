@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+
+    <data>
+
+    </data>
+
+
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        tools:openDrawer="start">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        tools:context=".ui.DashboardActivity">
+
+        <include
+            android:id="@+id/toolbarLayout"
+            layout="@layout/dashboard_app_bar" />
+<!--        <com.google.android.material.textfield.TextInputLayout-->
+<!--            android:id="@+id/searchInputLayout"-->
+<!--            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="60sp"-->
+<!--            android:textSize="@dimen/sp15"-->
+<!--            android:layout_margin="@dimen/dimen_16dp"-->
+<!--            app:boxBackgroundMode="outline"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/toolbarLayout"-->
+<!--            >-->
+            <EditText
+
+                android:layout_width="match_parent"
+                app:layout_constraintTop_toBottomOf="@id/toolbarLayout"
+                android:layout_height="45dp"
+                android:hint="Search item.."
+                android:layout_marginLeft="10dp"
+                android:visibility="gone"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:focusableInTouchMode="true"
+
+                android:imeOptions="actionSend"
+                android:drawableLeft="@drawable/searchicon"
+                android:id="@+id/edtSearch"
+                android:text="0"
+                android:textSize="13dp" />
+<!--            <com.google.android.material.textfield.TextInputEditText-->
+<!--                android:id="@+id/edtSearch"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:hint="Search"-->
+<!--                android:textSize="@dimen/sp20"-->
+<!--                android:drawableLeft="@drawable/searchicon"-->
+<!--                android:inputType="text"-->
+<!--                />-->
+
+<!--        </com.google.android.material.textfield.TextInputLayout>-->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvCategories"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="@dimen/dimen_8dp"
+            android:orientation="horizontal"
+
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+
+            app:layout_constraintTop_toBottomOf="@+id/edtSearch"
+            tools:listitem="@layout/item_category" />
+
+
+        <include
+            android:id="@+id/emptyLayout"
+            layout="@layout/layout_empty"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="0dp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvItems"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/dimen_8dp"
+
+            android:overScrollMode="never"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rvCategories"
+            tools:listitem="@layout/item_food">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/fabProceed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dimen_24dp"
+            android:paddingStart="@dimen/dimen_20dp"
+            android:paddingEnd="@dimen/dimen_20dp"
+            android:visibility="gone"
+            android:text="Proceed to cart"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            app:backgroundTint="@color/app_color"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/nav_header_home"
+        android:fitsSystemWindows="true"
+        android:visibility="visible"
+        app:menu="@menu/menu_dashboard" />
+</androidx.drawerlayout.widget.DrawerLayout>
+</layout>

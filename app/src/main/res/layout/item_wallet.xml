@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="@dimen/dimen_2dp"
+
+        android:background="@color/white">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txttypename"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Type"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp14"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/txtDate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginTop="5dp"
+                            android:text="Date:"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/dimen_14dp" />
+
+
+                        <TextView
+                            android:id="@+id/txttransAmt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginTop="5dp"
+                            android:text="Amount"
+                            android:visibility="gone"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/dimen_14dp" />
+
+                        <TextView
+                            android:id="@+id/txtAmount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginRight="20dp"
+                            android:text="Balance"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/dimen_14dp" />
+
+
+                    </RelativeLayout>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+
+                        <TextView
+                            android:id="@+id/txttranstype"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:text="Type"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/dimen_14dp" />
+
+
+                        <TextView
+                            android:id="@+id/txtBal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginRight="20dp"
+                            android:layout_marginBottom="5dp"
+                            android:text="(Balance)"
+                            android:visibility="gone"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/dimen_14dp" />
+
+                    </RelativeLayout>
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+<!--        <TextView-->
+<!--            android:id="@+id/txtDate"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_weight="0.7"-->
+<!--            android:gravity="start"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:padding="@dimen/dimen_12dp"-->
+<!--            android:textSize="@dimen/sp16" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/txtAmount"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_weight="0.3"-->
+<!--            android:fontFamily="@font/nunito_bold"-->
+<!--            android:gravity="start"-->
+<!--            android:padding="@dimen/dimen_12dp"-->
+<!--            android:textSize="@dimen/sp16" />-->
+
+    </LinearLayout>
+
+</layout>
