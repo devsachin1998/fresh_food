@@ -8,11 +8,12 @@ data class StartUpResponse(
 
     data class StartUp(
         var HelpLineNo: String,
+        var holidaytext: String,
         var Version: String,
         var _categoryList: ArrayList<Category>
     ) {
 
-        constructor() : this("","", arrayListOf())
+        constructor() : this("","dasdasdas", "",arrayListOf())
 
         data class Category(
             var CategoryID: Int,

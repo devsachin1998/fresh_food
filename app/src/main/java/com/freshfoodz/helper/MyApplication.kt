@@ -1,6 +1,7 @@
 package com.freshfoodz.helper
 
 import android.app.Application
+import android.os.Build
 import androidx.appcompat.app.AppCompatDelegate
 import com.google.gson.Gson
 import com.freshfoodz.api.ApiConstants
@@ -11,12 +12,25 @@ import okhttp3.Response
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import java.io.File
 import java.io.IOException
 import java.util.concurrent.TimeUnit
 
 class MyApplication : Application() {
     override fun onCreate() {
         super.onCreate()
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            try {
+                val codeCacheDir = File(applicationContext.codeCacheDir, ".overlay")
+                if (codeCacheDir.exists()) {
+                    codeCacheDir.deleteRecursively()
+                }
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
+        }
+        val dexOutputDir: File = codeCacheDir
+        dexOutputDir.setReadOnly()
         initGson()
         initRetrofit()
     }

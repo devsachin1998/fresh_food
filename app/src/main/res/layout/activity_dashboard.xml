@@ -63,6 +63,24 @@
 <!--                />-->
 
 <!--        </com.google.android.material.textfield.TextInputLayout>-->
+        <TextView
+            android:id="@+id/marqueeText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="marquee"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:singleLine="true"
+            android:focusable="true"
+            android:visibility="gone"
+            android:focusableInTouchMode="true"
+            android:scrollHorizontally="true"
+            android:text="✅ This is a scrolling marquee text. This is a scrolling marquee text. This is a scrolling marquee text."
+            android:textColor="#F6E767"
+            android:padding="@dimen/sp8"
+            android:textSize="18sp"
+            android:background='@color/red'
+            app:layout_constraintTop_toBottomOf="@id/edtSearch"
+            android:gravity="center_vertical" />
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvCategories"
             android:layout_width="match_parent"
@@ -72,7 +90,7 @@
 
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
 
-            app:layout_constraintTop_toBottomOf="@+id/edtSearch"
+            app:layout_constraintTop_toBottomOf="@+id/marqueeText"
             tools:listitem="@layout/item_category" />
 
 

@@ -8,7 +8,6 @@ import android.widget.LinearLayout
 import com.freshfoodz.databinding.ItemVariantBinding
 import com.freshfoodz.model.SubItem
 import com.freshfoodz.room.FoodDBHelper
-import me.himanshusoni.quantityview.QuantityView
 
 class ItemVariantView @JvmOverloads constructor(
     context: Context,
@@ -16,9 +15,7 @@ class ItemVariantView @JvmOverloads constructor(
     defStyleAttr: Int = 0
 ) : LinearLayout(context, attrs, defStyleAttr) {
 
-    constructor(context: Context, obj: SubItem, listener: OnUpdateListener) : this(
-        context
-    ) {
+    constructor(context: Context, obj: SubItem, listener: OnUpdateListener) : this(context) {
         variant = obj
         this.listener = listener
         initView()
@@ -36,67 +33,55 @@ class ItemVariantView @JvmOverloads constructor(
 
         FoodDBHelper.getItem(context, variant, object : FoodDBHelper.RoomCallBack {
             override fun onItem(item: SubItem) {
-                binding.qtyView.quantity = item.OrderQty
-                binding.qtyView.visibility = View.VISIBLE
-                binding.txtAdd.visibility = View.GONE
+                variant.OrderQty = item.OrderQty
+                updateView()
             }
 
             override fun onNotExist() {
-                binding.qtyView.quantity = 0
-                binding.qtyView.visibility = View.GONE
-                binding.txtAdd.visibility = View.VISIBLE
+                variant.OrderQty = 0
+                updateView()
             }
 
-            override fun onAllItems(items: ArrayList<SubItem>) {
-                // do nothing
-            }
+            override fun onAllItems(items: ArrayList<SubItem>) {}
         })
 
         binding.txtAdd.setOnClickListener {
-            addSingleItem(variant)
+            variant.OrderQty = 1
+            FoodDBHelper.addItem(context, variant)
+            updateView()
+            listener.onUpdate(false)
         }
 
-        binding.qtyView.onQuantityChangeListener =
-            object : QuantityView.OnQuantityChangeListener {
-                override fun onQuantityChanged(
-                    oldQuantity: Int,
-                    newQuantity: Int,
-                    programmatically: Boolean
-                ) {
-                    if (newQuantity == 0) {
-                        removeItem(variant)
-                    } else {
-                        variant.OrderQty = newQuantity
-                        FoodDBHelper.addItem(context, variant)
-                        listener.onUpdate(false)
-                    }
-                }
+        binding.btnPlus.setOnClickListener {
+            variant.OrderQty++
+            FoodDBHelper.addItem(context, variant)
+            updateView()
+            listener.onUpdate(false)
+        }
 
-                override fun onLimitReached() {
-
-                }
+        binding.btnMinus.setOnClickListener {
+            if (variant.OrderQty > 1) {
+                variant.OrderQty--
+                FoodDBHelper.addItem(context, variant)
+                listener.onUpdate(false)
+            } else {
+                variant.OrderQty = 0
+                FoodDBHelper.deleteItem(context, variant)
+                listener.onUpdate(true)
             }
+            updateView()
+        }
     }
 
-    private fun removeItem(variant: SubItem) {
-        binding.qtyView.quantity = 0
-        binding.qtyView.visibility = View.GONE
-        binding.txtAdd.visibility = View.VISIBLE
-
-        FoodDBHelper.deleteItem(context, variant)
-        listener.onUpdate(true)
-    }
-
-    private fun addSingleItem(variant: SubItem) {
-        binding.qtyView.quantity = 1
-        binding.qtyView.visibility = View.VISIBLE
-        binding.txtAdd.visibility = View.GONE
-
-        variant.OrderQty = 1
-        FoodDBHelper.addItem(context, variant)
-
-        listener.onUpdate(false)
-
+    private fun updateView() {
+        if (variant.OrderQty > 0) {
+            binding.txtAdd.visibility = View.GONE
+            binding.layoutQty.visibility = View.VISIBLE
+            binding.txtQty.text = variant.OrderQty.toString()
+        } else {
+            binding.txtAdd.visibility = View.VISIBLE
+            binding.layoutQty.visibility = View.GONE
+        }
     }
 
     interface OnUpdateListener {

@@ -73,19 +73,49 @@
                     android:drawableLeft="@drawable/ic_add"
                     android:textColor="@color/white"
                     android:textSize="@dimen/sp12" />
-
-                <me.himanshusoni.quantityview.QuantityView
-                    android:id="@+id/qtyView"
+                <LinearLayout
+                    android:id="@+id/layoutQty"
                     android:layout_width="wrap_content"
-                    android:layout_height="26dp"
-android:visibility="gone"
-app:qv_quantityBackground="@color/white"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
 
-                    app:qv_addButtonBackground="@drawable/more"
-                    app:qv_addButtonTextColor="@color/white"
-                    app:qv_quantityPadding="@dimen/sp10"
-                    app:qv_removeButtonBackground="@drawable/less"
-                    app:qv_removeButtonTextColor="@color/white" />
+                    <TextView
+                        android:id="@+id/btnMinus"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:gravity="center"
+                        android:drawableStart="@drawable/less"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/txtQty"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:gravity="center"
+                        android:text="0"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/btnPlus"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:gravity="center"
+                        android:drawableStart="@drawable/more"
+                        android:textSize="18sp" />
+                </LinearLayout>
+<!--                <me.himanshusoni.quantityview.QuantityView-->
+<!--                    android:id="@+id/qtyView"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="26dp"-->
+<!--android:visibility="gone"-->
+<!--app:qv_quantityBackground="@color/white"-->
+
+<!--                    app:qv_addButtonBackground="@drawable/more"-->
+<!--                    app:qv_addButtonTextColor="@color/white"-->
+<!--                    app:qv_quantityPadding="@dimen/sp10"-->
+<!--                    app:qv_removeButtonBackground="@drawable/less"-->
+<!--                    app:qv_removeButtonTextColor="@color/white" />-->
 
             </LinearLayout>
 
@@ -97,6 +127,7 @@ app:qv_quantityBackground="@color/white"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
+
             android:layout_marginTop="@dimen/dimen_8dp"
             android:text="1200 Rs."
             android:textColor="@color/black"

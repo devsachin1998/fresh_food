@@ -82,7 +82,6 @@ class DashboardActivity : AppCompatActivity(), StockListAdapter.OnUpdateListener
         adapter = StockListAdapter(this)
 
         startUp = PrefUtils.getStartUp(this)
-
         val version = startUp.Version.toString();
         if(!version.equals(GetAppVersion(this)))
         {
@@ -197,75 +196,6 @@ class DashboardActivity : AppCompatActivity(), StockListAdapter.OnUpdateListener
         }
     }
 
-    /* private class Settext extends AsyncTask<String, Void, String> {
-        boolean userfound;
-
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-        }
-
-        @Override
-        protected String doInBackground(String... params) {
-            String responseString = null;
-            try {
-                if (common.is_internet_connected()) {
-                    List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(2);
-                    nameValuePairs.add(new BasicNameValuePair("CustId", common.getSession(ConstValue.COMMON_KEY)));
-                    JSONParser jsonParser = new JSONParser();
-
-                    String json_responce = jsonParser.makeHttpRequest(ConstValue.SETTEXT, "POST", nameValuePairs);
-                    json_responce = json_responce.replace("\n", "");
-                    JSONObject jObj = new JSONObject(json_responce);
-                    if (jObj.has("Message") && !jObj.getString("Message").equalsIgnoreCase("false")) {
-                        comment = jObj.getString("Message");
-                        userfound = true;
-                    } else {
-                        userfound = false;
-                    }
-                } else {
-                    responseString = ConstValue.COMMON_INTERNETMSG;
-                }
-            } catch (JSONException e) {
-                // TODO Auto-generated catch block
-                responseString = e.getMessage();
-                CommonClass.writelog(tag, "Settext:doInBackground() 436 :JSONException Error: " + e.getMessage());
-            } catch (IOException e) {
-                // TODO Auto-generated catch block
-                responseString = e.getMessage();
-                e.printStackTrace();
-                CommonClass.writelog(tag, "Settext:doInBackground() 441 :IOException Error: " + e.getMessage());
-            }
-            // TODO: register the new account here.
-
-            return responseString;
-        }
-
-        @Override
-        protected void onPostExecute(final String success) {
-            try {
-                if (success != null) {
-                    if (success.equals(ConstValue.COMMON_INTERNETMSG)) {
-                        CommonClass.AppCrashScreen(getApplicationContext(), 1, tag,success);
-                    } else {
-                        CommonClass.AppCrashScreen(getApplicationContext(), 0, tag,success);
-                    }
-                } else {
-                    if (userfound) {
-                        textcomment.setText(comment);
-                    } else {
-                        common.setToastMessage("Error in Getting Text.");
-                    }
-                }
-                resumeHasRun = false;
-            }
-            catch (Exception ex)
-            {
-                CommonClass.writelog(tag, "Settext:onPostExecute() 471 :Exception Error: " + ex.getMessage());
-                CommonClass.AppCrashScreen(getApplicationContext(), 0, tag,ex.getMessage());
-            }
-        }
-    }*/
     fun shareWhatsApp() {
         try {
             profile = PrefUtils.getProfile(this)
@@ -274,7 +204,7 @@ class DashboardActivity : AppCompatActivity(), StockListAdapter.OnUpdateListener
             var Name = profile.Name;
 
                 Message =
-                    "has invited you to download Fresh Foodz app to get fresh vegetables delivered at your doorstep." +
+                    "has invited you to download The Veggies app to get fresh vegetables delivered at your doorstep." +
                             " Download:  http://bitly.ws/uTQS."
 
 
@@ -517,6 +447,20 @@ class DashboardActivity : AppCompatActivity(), StockListAdapter.OnUpdateListener
                 adapter.getFilter().filter(editable.toString())
             }
         })
+        startUp = PrefUtils.getStartUp(this)
+        val marqueeText = findViewById<TextView>(R.id.marqueeText)
+        if(startUp.holidaytext !="")
+        {
+            marqueeText.visibility =  View.VISIBLE
+            marqueeText.isSelected = true
+            marqueeText.text=startUp.holidaytext
+
+        }
+        else
+        {
+            marqueeText.visibility =  View.GONE
+        }
+
     }
     private fun addAutoStartup() {
         try {
