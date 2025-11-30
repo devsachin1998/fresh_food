@@ -41,6 +41,7 @@ class EditProfileActivity : AppCompatActivity(), RegisterViewModel.RegisterCallB
         binding.edtMobile.setText(profile.MobileNo)
         binding.edtEmail.setText(profile.Email)
         binding.edtAddress.setText(profile.Address)
+        binding.edtpincode.setText(profile.Pincode)
 
         initClick()
     }

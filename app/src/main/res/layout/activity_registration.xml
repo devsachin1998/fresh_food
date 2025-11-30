@@ -4,21 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:background="@color/white"
         android:layout_height="match_parent"
+        android:background="@color/white"
         tools:context=".ui.RegistrationActivity">
 
+        <!-- Constrain ScrollView to all sides of parent -->
         <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/scrollView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintEnd_toEndOf="parent">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -49,11 +51,12 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Name"
-                        android:inputType="text"
+                        android:inputType="textPersonName"
                         android:maxLines="1" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
+                <!-- Username (hidden by default) -->
                 <com.google.android.material.textfield.TextInputLayout
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
@@ -67,7 +70,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Username"
-
                         android:inputType="text"
                         android:maxLines="1" />
 
@@ -86,8 +88,8 @@
                         android:layout_height="wrap_content"
                         android:hint="Mobile Number"
                         android:inputType="phone"
-                        android:maxLength="10"
-                        android:maxLines="1" />
+                        android:maxLines="1"
+                        android:maxLength="10" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -108,6 +110,7 @@
 
                 </com.google.android.material.textfield.TextInputLayout>
 
+                <!-- Address (multi-line) -->
                 <com.google.android.material.textfield.TextInputLayout
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
@@ -122,22 +125,29 @@
                         android:gravity="top|start"
                         android:hint="Address"
                         android:inputType="textMultiLine"
+                        android:minLines="2"
                         android:maxLines="8"
                         android:imeOptions="actionDone"
-
-                        android:minLines="2"
                         android:scrollbars="vertical" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Pincode must be in its own TextInputLayout -->
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_12dp"
+                    app:boxBackgroundMode="outline">
+
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/edtpincode"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="top|start"
                         android:hint="Pincode"
-                        android:inputType='number'
-                        android:imeOptions="actionDone"
-                        android:maxLength="6"
+                        android:inputType="number"
                         android:maxLines="1"
-                        android:scrollbars="vertical" />
+                        android:maxLength="6"
+                        android:imeOptions="actionDone" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -158,26 +168,28 @@
 
                 </com.google.android.material.textfield.TextInputLayout>
 
+                <!-- Register button: give explicit size for predictable rendering -->
                 <ImageButton
                     android:id="@+id/btnRegister"
                     style="@style/ButtonStyle"
+                    android:layout_width="@dimen/dimen_48dp"
+                    android:layout_height="@dimen/dimen_48dp"
                     android:layout_gravity="end|center_vertical"
                     android:layout_marginTop="@dimen/dimen_16dp"
                     android:src="@drawable/ic_new_arrow_right"
-                    app:tint="@color/white" />
+                    app:tint="@color/white"
+                   />
 
                 <TextView
                     android:id="@+id/txtLoginLabel"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="start"
                     android:layout_marginTop="@dimen/dimen_16dp"
                     android:fontFamily="@font/nunito_semi_bold"
                     android:gravity="center"
                     android:padding="@dimen/dimen_16dp"
                     android:text="Already have an account? Login"
-                    android:textColor="@color/black"
-                    app:layout_constraintBottom_toBottomOf="parent" />
+                    android:textColor="@color/black" />
 
             </LinearLayout>
 

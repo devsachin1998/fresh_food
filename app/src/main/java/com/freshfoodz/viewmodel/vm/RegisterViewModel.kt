@@ -1,6 +1,7 @@
 package com.freshfoodz.viewmodel.vm
 
 import android.content.Context
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModel
 import com.freshfoodz.R
@@ -33,11 +34,15 @@ class RegisterViewModel(private var context: Context, private var callBack: Regi
             callBack.onError("Mobile number is not valid")
             return
         }
-        if (emailNotValid(binding.edtEmail.value())) {
-            callBack.onError("Email-id is not valid")
-            return
-        }
+        val email = binding.edtEmail.value().trim()
 
+// If email is entered, then validate it
+        if (email.isNotEmpty()) {
+            if (emailNotValid(email)) {
+                callBack.onError("Email-id is not valid")
+                return
+            }
+        }
 
         if (binding.edtAddress.isNullEmpty()) {
             callBack.onError("Address is required")
@@ -62,13 +67,22 @@ class RegisterViewModel(private var context: Context, private var callBack: Regi
                 binding.edtMobile.value(),
                 binding.edtName.value(),
                 binding.edtPassword.value(), 4, 0,
-                binding.edtName.value(), binding.edtAddress.value(),binding.edtAddress.value()
+                binding.edtName.value(), binding.edtAddress.value(),binding.edtpincode.value()
             )
         ).observe(context as AppCompatActivity, {
             if (it.response_code == ApiConstants.SUCCESS.toString()) {
                 context.fireIntent(SignupDoneActivity::class.java, true)
             } else {
-                callBack.onError(it.message)
+                if(it.message.contains("Pincode"))
+                {
+                    AlertDialog.Builder(context)
+                        .setTitle("Service Unavailable")
+                        .setMessage("We're not providing service at your location right now. We'll be available soon.")
+                        .setPositiveButton("OK", null)
+                        .show()
+                }else {
+                    callBack.onError(it.message)
+                }
             }
         })
     }
@@ -90,11 +104,16 @@ class RegisterViewModel(private var context: Context, private var callBack: Regi
             callBack.onError("Mobile number is not valid")
             return
         }
+        val email = binding.edtEmail.value().trim()
 
-        if (emailNotValid(binding.edtEmail.value())) {
-            callBack.onError("Email-id is not valid")
-            return
+// If email is entered, then validate it
+        if (email.isNotEmpty()) {
+            if (emailNotValid(email)) {
+                callBack.onError("Email-id is not valid")
+                return
+            }
         }
+
         if (binding.edtAddress.isNullEmpty()) {
             callBack.onError("Address is required")
             return
@@ -112,7 +131,7 @@ class RegisterViewModel(private var context: Context, private var callBack: Regi
                 password, 4, userID,
                 binding.edtUsername.value(),
                 binding.edtAddress.value(),
-                binding.edtAddress.value()
+                binding.edtpincode.value()
 
             )
         ).observe(context as AppCompatActivity, {

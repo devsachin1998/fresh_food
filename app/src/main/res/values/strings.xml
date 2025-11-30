@@ -9,7 +9,7 @@
     <string name="reject_permission">If you reject permission,you can not use this service\n\nPlease turn on permissions at [Setting] > [Permission]</string>
     <string name="no_internet_title">No Internet Connection</string>
     <string name="try_again">Something went wrong. Please try again.</string>
-    <string name="signup_done">You are Successfully Registered\nPlease Check you Email and Login with Given Username and Password</string>
+    <string name="signup_done">You are Successfully Registered\nPlease Check you Email and Login with Given MobileNo and Password</string>
     <string name="payment_done">You transaction Successfully Done.\nYour updated balance amount is 110.\n Thanks for using Fresh Foodz</string>
     <string name="payment_fail">You transaction was not Successful due some reason. Please try again afrer 5 minnutes. Please contact us if you are not able to make online payment. \n Thanks for using Fresh Foodz</string>
     <string name="title_activity_notification">NotificationActivity</string>

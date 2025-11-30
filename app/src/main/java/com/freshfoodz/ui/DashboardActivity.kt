@@ -205,7 +205,7 @@ class DashboardActivity : AppCompatActivity(), StockListAdapter.OnUpdateListener
 
                 Message =
                     "has invited you to download The Veggies app to get fresh vegetables delivered at your doorstep." +
-                            " Download:  http://bitly.ws/uTQS."
+                            " Download:  https://tinyurl.com/bdfuke5b"
 
 
 
@@ -598,6 +598,7 @@ class DashboardActivity : AppCompatActivity(), StockListAdapter.OnUpdateListener
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.menu_dashboard, menu)
+        menu?.clear()
         return false
     }
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
