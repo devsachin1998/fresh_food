@@ -8,7 +8,8 @@ data class RegisterUpdateReq(
     var RoleID: Int,
     var UserID: Int,
     var UserName: String,
-    var Address: String
+    var Address: String,
+    var Pincode:String
 ) {
-    constructor() : this("", "", "", "", 4, 0, "", "")
+    constructor() : this("", "", "", "", 4, 0, "", "","")
 }

@@ -127,7 +127,17 @@
 
                         android:minLines="2"
                         android:scrollbars="vertical" />
-
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edtpincode"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="top|start"
+                        android:hint="Pincode"
+                        android:inputType='number'
+                        android:imeOptions="actionDone"
+                        android:maxLength="6"
+                        android:maxLines="1"
+                        android:scrollbars="vertical" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout

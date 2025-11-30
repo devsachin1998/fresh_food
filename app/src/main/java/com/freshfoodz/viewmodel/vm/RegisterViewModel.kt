@@ -33,14 +33,12 @@ class RegisterViewModel(private var context: Context, private var callBack: Regi
             callBack.onError("Mobile number is not valid")
             return
         }
-        if (binding.edtEmail.isNullEmpty()) {
-            callBack.onError("Email-id is required")
-            return
-        }
         if (emailNotValid(binding.edtEmail.value())) {
             callBack.onError("Email-id is not valid")
             return
         }
+
+
         if (binding.edtAddress.isNullEmpty()) {
             callBack.onError("Address is required")
             return
@@ -53,6 +51,10 @@ class RegisterViewModel(private var context: Context, private var callBack: Regi
             callBack.onError("Password must be at least of " + context.resources.getInteger(R.integer.pwd_min) + " characters")
             return
         }
+        if (binding.edtpincode.isNullEmpty()) {
+            callBack.onError("Pincode is required")
+            return
+        }
 
         ApiClient(context).doRegisterUpdate(
             RegisterUpdateReq(
@@ -60,7 +62,7 @@ class RegisterViewModel(private var context: Context, private var callBack: Regi
                 binding.edtMobile.value(),
                 binding.edtName.value(),
                 binding.edtPassword.value(), 4, 0,
-                binding.edtName.value(), binding.edtAddress.value()
+                binding.edtName.value(), binding.edtAddress.value(),binding.edtAddress.value()
             )
         ).observe(context as AppCompatActivity, {
             if (it.response_code == ApiConstants.SUCCESS.toString()) {
@@ -88,16 +90,17 @@ class RegisterViewModel(private var context: Context, private var callBack: Regi
             callBack.onError("Mobile number is not valid")
             return
         }
-        if (binding.edtEmail.isNullEmpty()) {
-            callBack.onError("Email-id is required")
-            return
-        }
+
         if (emailNotValid(binding.edtEmail.value())) {
             callBack.onError("Email-id is not valid")
             return
         }
         if (binding.edtAddress.isNullEmpty()) {
             callBack.onError("Address is required")
+            return
+        }
+        if (binding.edtpincode.isNullEmpty()) {
+            callBack.onError("Pincode is required")
             return
         }
 
@@ -108,7 +111,9 @@ class RegisterViewModel(private var context: Context, private var callBack: Regi
                 binding.edtName.value(),
                 password, 4, userID,
                 binding.edtUsername.value(),
+                binding.edtAddress.value(),
                 binding.edtAddress.value()
+
             )
         ).observe(context as AppCompatActivity, {
             if (it.response_code == ApiConstants.SUCCESS.toString()) {
@@ -118,6 +123,7 @@ class RegisterViewModel(private var context: Context, private var callBack: Regi
                 profile.UserName = binding.edtUsername.value()
                 profile.MobileNo = binding.edtMobile.value()
                 profile.Email = binding.edtEmail.value()
+                profile.Pincode = binding.edtpincode.value()
                 PrefUtils.saveObjectValue(context, PrefUtils.USER_PROFILE, profile)
 
                 context.toast(it.message)

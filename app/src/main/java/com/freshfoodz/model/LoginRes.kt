@@ -20,11 +20,12 @@ data class LoginRes(
         var Address: String,
         var WalletID: Int,
         var WalletBalance: Double,
+        var Pincode:String,
     ) {
 
         val newWalletBalance: String
             get() = DecimalFormat("0.##").format(WalletBalance)
 
-        constructor() : this("", false, "", "", "", 0, 0, "", "", 0, 0.0)
+        constructor() : this("", false, "", "", "", 0, 0, "", "", 0, 0.0,"")
     }
 }
